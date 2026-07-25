@@ -1,0 +1,30 @@
+﻿# ReAct Agent 配置
+
+llm:
+  provider: deepseek
+  model: deepseek-v4-flash
+  temperature: 0.0
+  max_tokens: 8192
+
+agent:
+  max_steps: 10
+  max_retries: 3
+
+embedding:
+  model: BAAI/bge-small-zh-v1.5
+  device: cpu
+
+chroma:
+  collection_name: knowledge_base
+  persist_directory: ../prod_rag/data/chroma_db
+
+retrieval:
+  top_k: 5
+
+server:
+  host: 0.0.0.0
+  port: 8502
+
+log:
+  level: INFO
+  file: logs/agent.log
